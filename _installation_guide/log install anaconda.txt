@@ -1,0 +1,296 @@
+log install anaconda.txt
+
+
+
+
+(base) C:\Users\T490>call %USERPROFILE%\anaconda3\Scripts\activate.bat
+
+(base) C:\Users\T490>d:
+
+(base) D:\>cd JGES113_score
+
+(base) D:\JGES113_score>dir/w
+ Volume in drive D is Data
+ Volume Serial Number is 22D1-6047
+
+ Directory of D:\JGES113_score
+
+[.]                            [..]                           111.xlsx
+111.xlsx.md5                   111_BAK.xlsx                   111_BAK.xlsx.md5
+112.xlsx                       112.xlsx.md5                   112_BAK.xlsx
+112_BAK.xlsx.md5               113.xlsx                       113.xlsx.md5
+113_BAK.xlsx                   113_BAK.xlsx.md5               [html]
+[ini]                          Result.xlsx                    _Champion.py
+[_installation_guide]          _Run_the _Report_jges113.bat   加減分.xlsx
+加減分.xlsx.md5                   加減分_BAK.xlsx                   加減分_BAK.xlsx.md5
+              19 File(s)        249,379 bytes
+               5 Dir(s)  321,329,614,848 bytes free
+
+(base) D:\JGES113_score>cd _installation_guide
+
+(base) D:\JGES113_score\_installation_guide>env_create.bat
+
+(base) D:\JGES113_score\_installation_guide>conda env create -f Champion.yaml
+Collecting package metadata (repodata.json): done
+Solving environment: failed
+
+ResolvePackageNotFound:
+  - jpeg==9b=he27b436_2
+  - mkl-service==2.4.0=py37hc431981_0
+  - autopep8==1.4.4=py37_0
+  - sphinxcontrib-jsmath==1.0.1=py37_0
+  - nbformat==5.0.4=py37_0
+  - defusedxml==0.6.0=py37_0
+  - jdcal==1.4.1=py37_0
+  - numpy==1.21.2=py37h06b4c4b_0
+  - numpy-base==1.21.2=py37he2c9e7c_0
+  - intel-openmp==2021.3.0=h9f7ea03_3372
+  - pandas==1.3.3=py37h7f105c9_0
+  - yapf==0.28.0=py37_0
+  - mkl_fft==1.3.1=py37h116a794_0
+  - mkl==2021.3.0=h9f7ea03_524
+  - yaml==0.1.7=h896c600_2
+  - numexpr==2.7.3=py37hdbe7276_1
+  - zlib==1.2.11=h33f27b4_4
+  - icu==58.2=h3fcc66b_1
+  - pydocstyle==4.0.1=py37_0
+  - qtpy==1.9.0=py37_0
+  - mkl_random==1.2.2=py37hcf78d83_0
+
+
+(base) D:\JGES113_score\_installation_guide>conda create --name myenv python=3.7
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: C:\Users\T490\anaconda3\envs\myenv
+
+  added / updated specs:
+    - python=3.7
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    ca-certificates-2022.10.11 |       haa95532_0         125 KB
+    certifi-2022.9.24          |   py37haa95532_0         154 KB
+    openssl-1.1.1s             |       h2bbff1b_0         5.5 MB
+    pip-22.2.2                 |   py37haa95532_0         2.3 MB
+    python-3.7.15              |       h6244533_0        15.1 MB
+    setuptools-65.5.0          |   py37haa95532_0         1.1 MB
+    wincertstore-0.2           |   py37haa95532_2          15 KB
+    ------------------------------------------------------------
+                                           Total:        24.3 MB
+
+The following NEW packages will be INSTALLED:
+
+  ca-certificates    pkgs/main/win-64::ca-certificates-2022.10.11-haa95532_0 None
+  certifi            pkgs/main/win-64::certifi-2022.9.24-py37haa95532_0 None
+  openssl            pkgs/main/win-64::openssl-1.1.1s-h2bbff1b_0 None
+  pip                pkgs/main/win-64::pip-22.2.2-py37haa95532_0 None
+  python             pkgs/main/win-64::python-3.7.15-h6244533_0 None
+  setuptools         pkgs/main/win-64::setuptools-65.5.0-py37haa95532_0 None
+  sqlite             pkgs/main/win-64::sqlite-3.39.3-h2bbff1b_0 None
+  vc                 pkgs/main/win-64::vc-14.2-h21ff451_1 None
+  vs2015_runtime     pkgs/main/win-64::vs2015_runtime-14.27.29016-h5e58377_2 None
+  wheel              pkgs/main/noarch::wheel-0.37.1-pyhd3eb1b0_0 None
+  wincertstore       pkgs/main/win-64::wincertstore-0.2-py37haa95532_2 None
+
+
+Proceed ([y]/n)? y
+
+
+Downloading and Extracting Packages
+certifi-2022.9.24    | 154 KB    | ################################################################################################################################################################################################# | 100%
+ca-certificates-2022 | 125 KB    | ################################################################################################################################################################################################# | 100%
+pip-22.2.2           | 2.3 MB    | ################################################################################################################################################################################################# | 100%
+openssl-1.1.1s       | 5.5 MB    | ################################################################################################################################################################################################# | 100%
+wincertstore-0.2     | 15 KB     | ################################################################################################################################################################################################# | 100%
+python-3.7.15        | 15.1 MB   | ################################################################################################################################################################################################# | 100%
+setuptools-65.5.0    | 1.1 MB    | ################################################################################################################################################################################################# | 100%
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use
+#
+#     $ conda activate myenv
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+Retrieving notices: ...working... done
+
+(base) D:\JGES113_score\_installation_guide>
+(base) D:\JGES113_score\_installation_guide>
+(base) D:\JGES113_score\_installation_guide>
+(base) D:\JGES113_score\_installation_guide>
+(base) D:\JGES113_score\_installation_guide>call %USERPROFILE%\anaconda3\Scripts\activate.bat score
+
+EnvironmentNameNotFound: Could not find conda environment: score
+You can list all discoverable environments with `conda info --envs`.
+
+
+
+(base) D:\JGES113_score\_installation_guide>call C:\ProgramData\Anaconda3\Scripts\activate.bat score
+The system cannot find the path specified.
+
+(base) D:\JGES113_score\_installation_guide>c:
+
+(base) C:\Users\T490>call C:\ProgramData\Anaconda3\Scripts\activate.bat score
+The system cannot find the path specified.
+
+(base) C:\Users\T490>call %USERPROFILE%\anaconda3\Scripts\activate.bat score
+
+EnvironmentNameNotFound: Could not find conda environment: score
+You can list all discoverable environments with `conda info --envs`.
+
+
+
+(base) C:\Users\T490>call C:\Users\T490\anaconda3\Scripts\activate.bat score
+
+EnvironmentNameNotFound: Could not find conda environment: score
+You can list all discoverable environments with `conda info --envs`.
+
+
+
+(base) C:\Users\T490>conda install pandas
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+# All requested packages already installed.
+
+Retrieving notices: ...working... done
+
+(base) C:\Users\T490>conda install -c conda-forge google-cloud-storage
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: C:\Users\T490\anaconda3
+
+  added / updated specs:
+    - google-cloud-storage
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    aiohttp-3.8.1              |   py39hb82d6ee_1         545 KB  conda-forge
+    aiosignal-1.3.1            |     pyhd8ed1ab_0          12 KB  conda-forge
+    async-timeout-4.0.2        |     pyhd8ed1ab_0           9 KB  conda-forge
+    cachetools-5.2.0           |     pyhd8ed1ab_0          13 KB  conda-forge
+    conda-22.9.0               |   py39hcbf5309_2         985 KB  conda-forge
+    frozenlist-1.2.0           |   py39h2bbff1b_0          77 KB
+    google-api-core-2.10.1     |     pyhd8ed1ab_0          72 KB  conda-forge
+    google-auth-2.14.0         |     pyh1a96a4e_0          94 KB  conda-forge
+    google-cloud-core-2.3.2    |     pyhd8ed1ab_0          28 KB  conda-forge
+    google-cloud-storage-2.6.0 |     pyh1a96a4e_0          74 KB  conda-forge
+    google-crc32c-1.1.2        |   py39h3fc79e4_3          26 KB  conda-forge
+    google-resumable-media-2.4.0|     pyhd8ed1ab_0          43 KB  conda-forge
+    googleapis-common-protos-1.56.4|   py39h35db3c3_1         124 KB  conda-forge
+    grpcio-1.42.0              |   py39hc60d5dd_0         1.9 MB
+    libcrc32c-1.1.2            |       h0e60522_0          25 KB  conda-forge
+    libprotobuf-3.20.1         |       h23ce68f_0         2.0 MB
+    multidict-6.0.2            |   py39hb82d6ee_1          47 KB  conda-forge
+    protobuf-3.20.1            |   py39hcbf5309_0         231 KB  conda-forge
+    python_abi-3.9             |           2_cp39           4 KB  conda-forge
+    pyu2f-0.1.5                |     pyhd8ed1ab_0          31 KB  conda-forge
+    rsa-4.9                    |     pyhd8ed1ab_0          29 KB  conda-forge
+    yarl-1.7.2                 |   py39hb82d6ee_2         127 KB  conda-forge
+    ------------------------------------------------------------
+                                           Total:         6.3 MB
+
+The following NEW packages will be INSTALLED:
+
+  aiohttp            conda-forge/win-64::aiohttp-3.8.1-py39hb82d6ee_1 None
+  aiosignal          conda-forge/noarch::aiosignal-1.3.1-pyhd8ed1ab_0 None
+  async-timeout      conda-forge/noarch::async-timeout-4.0.2-pyhd8ed1ab_0 None
+  cachetools         conda-forge/noarch::cachetools-5.2.0-pyhd8ed1ab_0 None
+  frozenlist         pkgs/main/win-64::frozenlist-1.2.0-py39h2bbff1b_0 None
+  google-api-core    conda-forge/noarch::google-api-core-2.10.1-pyhd8ed1ab_0 None
+  google-auth        conda-forge/noarch::google-auth-2.14.0-pyh1a96a4e_0 None
+  google-cloud-core  conda-forge/noarch::google-cloud-core-2.3.2-pyhd8ed1ab_0 None
+  google-cloud-stor~ conda-forge/noarch::google-cloud-storage-2.6.0-pyh1a96a4e_0 None
+  google-crc32c      conda-forge/win-64::google-crc32c-1.1.2-py39h3fc79e4_3 None
+  google-resumable-~ conda-forge/noarch::google-resumable-media-2.4.0-pyhd8ed1ab_0 None
+  googleapis-common~ conda-forge/win-64::googleapis-common-protos-1.56.4-py39h35db3c3_1 None
+  grpcio             pkgs/main/win-64::grpcio-1.42.0-py39hc60d5dd_0 None
+  libcrc32c          conda-forge/win-64::libcrc32c-1.1.2-h0e60522_0 None
+  libprotobuf        pkgs/main/win-64::libprotobuf-3.20.1-h23ce68f_0 None
+  multidict          conda-forge/win-64::multidict-6.0.2-py39hb82d6ee_1 None
+  protobuf           conda-forge/win-64::protobuf-3.20.1-py39hcbf5309_0 None
+  python_abi         conda-forge/win-64::python_abi-3.9-2_cp39 None
+  pyu2f              conda-forge/noarch::pyu2f-0.1.5-pyhd8ed1ab_0 None
+  rsa                conda-forge/noarch::rsa-4.9-pyhd8ed1ab_0 None
+  yarl               conda-forge/win-64::yarl-1.7.2-py39hb82d6ee_2 None
+
+The following packages will be UPDATED:
+
+  conda              pkgs/main::conda-22.9.0-py39haa95532_0 --> conda-forge::conda-22.9.0-py39hcbf5309_2 None
+
+
+Proceed ([y]/n)? y
+
+
+Downloading and Extracting Packages
+async-timeout-4.0.2  | 9 KB      | ################################################################################################################################################################################################# | 100%
+aiosignal-1.3.1      | 12 KB     | ################################################################################################################################################################################################# | 100%
+google-resumable-med | 43 KB     | ################################################################################################################################################################################################# | 100%
+grpcio-1.42.0        | 1.9 MB    | ################################################################################################################################################################################################# | 100%
+rsa-4.9              | 29 KB     | ################################################################################################################################################################################################# | 100%
+yarl-1.7.2           | 127 KB    | ################################################################################################################################################################################################# | 100%
+google-cloud-core-2. | 28 KB     | ################################################################################################################################################################################################# | 100%
+google-api-core-2.10 | 72 KB     | ################################################################################################################################################################################################# | 100%
+libprotobuf-3.20.1   | 2.0 MB    | ################################################################################################################################################################################################# | 100%
+googleapis-common-pr | 124 KB    | ################################################################################################################################################################################################# | 100%
+conda-22.9.0         | 985 KB    | ################################################################################################################################################################################################# | 100%
+pyu2f-0.1.5          | 31 KB     | ################################################################################################################################################################################################# | 100%
+python_abi-3.9       | 4 KB      | ################################################################################################################################################################################################# | 100%
+cachetools-5.2.0     | 13 KB     | ################################################################################################################################################################################################# | 100%
+libcrc32c-1.1.2      | 25 KB     | ################################################################################################################################################################################################# | 100%
+multidict-6.0.2      | 47 KB     | ################################################################################################################################################################################################# | 100%
+protobuf-3.20.1      | 231 KB    | ################################################################################################################################################################################################# | 100%
+frozenlist-1.2.0     | 77 KB     | ################################################################################################################################################################################################# | 100%
+google-auth-2.14.0   | 94 KB     | ################################################################################################################################################################################################# | 100%
+google-cloud-storage | 74 KB     | ################################################################################################################################################################################################# | 100%
+google-crc32c-1.1.2  | 26 KB     | ################################################################################################################################################################################################# | 100%
+aiohttp-3.8.1        | 545 KB    | ################################################################################################################################################################################################# | 100%
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+Retrieving notices: ...working... done
+
+(base) C:\Users\T490>
+(base) C:\Users\T490>
+(base) C:\Users\T490>
+(base) C:\Users\T490>conda install openpyxl
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: C:\Users\T490\anaconda3
+
+  added / updated specs:
+    - openpyxl
+
+
+The following packages will be SUPERSEDED by a higher-priority channel:
+
+  conda              conda-forge::conda-22.9.0-py39hcbf530~ --> pkgs/main::conda-22.9.0-py39haa95532_0 None
+
+
+Proceed ([y]/n)? y
+
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+Retrieving notices: ...working... done
+
+(base) C:\Users\T490>

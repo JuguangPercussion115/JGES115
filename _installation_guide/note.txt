@@ -1,0 +1,11 @@
+gsutil defacl set public-read gs://XXXXXXXX 
+gsutil defacl set public-read gs://XXXXXXXX 
+
+
+Public access URL
+https://storage.googleapis.com/jges113/2023%E6%AF%94%E8%B3%BD%E8%A1%A8.html
+
+https://bit.ly/3gvbc8X
+
+%windir%\System32\cmd.exe "/K" C:\ProgramData\Anaconda3\Scripts\activate.bat C:\ProgramData\Anaconda3
+
