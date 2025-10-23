@@ -270,7 +270,7 @@ def GenReport(df):
                     f.write(html_student_rs_str)
                 f.write("</tr>")    
     print("-已產生檔案:{}".format(html_file_name))           
-    upload_to_bucket(gcp_file_name,html_file_name,PGM_INFO['GCP_BUCKET_NAME'])
+    #upload_to_bucket(gcp_file_name,html_file_name,PGM_INFO['GCP_BUCKET_NAME'])
         
 
 def get_modification_date(filename):
