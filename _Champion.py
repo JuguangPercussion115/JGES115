@@ -406,14 +406,20 @@ if __name__ == "__main__":
         subprocess.run(["git", "commit", "-m", commit_msg], capture_output=True)
 
         print(" [Git] 正在透過安全通道推送至 GitHub Pages (main)...")
-        # 追蹤推送狀態
-        push_result = subprocess.run(["git", "push", "-u", "origin", "main", "--force"], capture_output=True, text=True)
+        # 修正重點：加上 errors='ignore'，徹底根除 cp950 解碼特殊符號崩潰的問題
+        push_result = subprocess.run(
+            ["git", "push", "-u", "origin", "main", "--force"], 
+            capture_output=True, 
+            text=True, 
+            errors='ignore'
+        )
         
         if push_result.returncode == 0:
             print("🏆 [成功] 網頁已透過 Token 完美部署至雲端 GitHub Pages！")
         else:
             print("❌ [失敗] Git 推送失敗。錯誤訊息如下：")
             print(push_result.stderr)
+
     else:
         print("\n[提示] INI 設定檔中未偵測到 github_url 或 github_token，跳過雲端自動同步。")
 
