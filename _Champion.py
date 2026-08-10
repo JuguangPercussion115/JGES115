@@ -374,10 +374,25 @@ if __name__ == "__main__":
     print("====================================================")
 
     # --------------------------------------------------------------------------
-    # 擴充功能 H：讀取 INI 設定並透過 Access Token 自動部署至 GitHub
+    # 擴充功能 H：智慧載入 GitHub 憑證 (支援直接貼上或讀取 JSON 檔案)
     # --------------------------------------------------------------------------
     repo_url = pgm_info.get('github_url', '').strip()
-    token = pgm_info.get('github_token', '').strip()
+    token_config = pgm_info.get('github_token', '').strip()
+    
+    # 智慧判斷：若設定為 .json 檔案且檔案存在，則讀取之
+    if token_config.lower().endswith('.json') and os.path.exists(token_config):
+        try:
+            import json
+            with open(token_config, 'r', encoding='utf-8') as jf:
+                token_data = json.load(jf)
+                # 彈性支援 'github_token', 'token', 'PAT' 鍵名
+                token = token_data.get('github_token', token_data.get('token', token_data.get('PAT', ''))).strip()
+            print(f" [資訊] 已成功從 {token_config} 安全載入憑證。")
+        except Exception as e:
+            print(f" [錯誤] 讀取 JSON 失敗: {e}")
+            token = ""
+    else:
+        token = token_config # 傳統方式：直接讀取文字
 
     if repo_url and token:
         print("*啟動 GitHub Pages 雲端自動同步管線*" + "*"*20)
@@ -398,15 +413,21 @@ if __name__ == "__main__":
         subprocess.run(["git", "remote", "remove", "origin"], capture_output=True)
         subprocess.run(["git", "remote", "add", "origin", authenticated_url], capture_output=True)
 
-        # 4. 執行標準的 Git 提交管線
-        print(" [Git] 正在封裝網頁變更元件...")
-        subprocess.run(["git", "add", "."])
+                # 4. 執行標準的 Git 提交管線 (修正：從 add . 改為限定 html 資料夾)
+        print(" [Git] 正在單獨封裝 html 網頁變更元件...")
+        
+        # 先將可能誤加入追蹤的舊敏感檔案從快取中移除（不刪除本地檔案）
+        subprocess.run(["git", "rm", "-r", "--cached", "ini/"], capture_output=True)
+        
+        # 只強制將 html 資料夾與必要的網頁模板加入 Git 封裝
+        subprocess.run(["git", "add", "html/*"])
+        subprocess.run(["git", "add", "ini/Sample_Race.html"], capture_output=True)
+        subprocess.run(["git", "add", ".gitignore"], capture_output=True)
         
         commit_msg = f"Auto Update: Score HTML Report ({datetime.now().strftime('%Y/%m/%d %H:%M:%S')})"
         subprocess.run(["git", "commit", "-m", commit_msg], capture_output=True)
 
         print(" [Git] 正在透過安全通道推送至 GitHub Pages (main)...")
-        # 修正重點：加上 errors='ignore'，徹底根除 cp950 解碼特殊符號崩潰的問題
         push_result = subprocess.run(
             ["git", "push", "-u", "origin", "main", "--force"], 
             capture_output=True, 
@@ -419,6 +440,7 @@ if __name__ == "__main__":
         else:
             print("❌ [失敗] Git 推送失敗。錯誤訊息如下：")
             print(push_result.stderr)
+
 
     else:
         print("\n[提示] INI 設定檔中未偵測到 github_url 或 github_token，跳過雲端自動同步。")
