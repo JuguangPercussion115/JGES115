@@ -47,7 +47,7 @@ github_token：填入步驟 0 複製的那一長串金鑰字串（例如：ghp_x
 本機備份網頁：會在你的電腦 html 資料夾內自動產生 index.html 檔案。
 
 公開線上網頁（發布給家長/學生看）：
-👉 點此開啟線上成績看板網站
+https://juguangpercussion115.github.io/JGES115/html/
 --
 0. Apply GitHub account and create personal access token
 Personal access token should have full control of private repositories
