@@ -2,6 +2,7 @@ import os
 import configparser
 import urllib.request
 import pandas as pd
+import gdown
 import numpy as np
 import shutil
 import hashlib
@@ -13,18 +14,8 @@ from datetime import datetime
 def DownLoadFile(url, file_name=""):   
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'} 
     try:
-        request = urllib.request.Request(url, headers=headers)
-        response = urllib.request.urlopen(request)
-        if file_name == "":
-            file_name = response.info().get_filename() or "no_filename"
-        
-        block_sz = 8192
-        with open(file_name, 'wb') as f:
-            while True:
-                buffer = response.read(block_sz)
-                if not buffer:
-                    break
-                f.write(buffer)
+        # 使用 gdown 下載，fuzzy=True 會自動解析網址中的檔案 ID
+        gdown.download(url, file_name, quiet=False, fuzzy=True)
         print(f" [下載成功] -> {file_name}")
     except Exception as e:
         print(f" [下載錯誤] 無法下載 {file_name}: {e}")
