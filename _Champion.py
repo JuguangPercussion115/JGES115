@@ -15,7 +15,7 @@ def DownLoadFile(url, file_name=""):
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'} 
     try:
         # 使用 gdown 下載，fuzzy=True 會自動解析網址中的檔案 ID
-        gdown.download(url, file_name, quiet=False, fuzzy=True)
+        gdown.download(url, file_name, quiet=False)
         print(f" [下載成功] -> {file_name}")
     except Exception as e:
         print(f" [下載錯誤] 無法下載 {file_name}: {e}")
