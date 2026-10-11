@@ -265,7 +265,17 @@ if __name__ == "__main__":
                 if song_name in df_grade.columns:
                     col_base_idx = list(df_grade.columns).index(song_name)
                     pass_mode = str(df_grade.iloc[idx, col_base_idx]).strip()
-                    pass_time = str(df_grade.iloc[idx, col_base_idx + 1]).strip().replace("-", "/")
+                    #pass_time = str(df_grade.iloc[idx, col_base_idx + 1]).strip().replace("-", "/")
+                    raw_time = df_grade.iloc[idx, col_base_idx + 1]
+                    
+                    if pd.notna(raw_time) and raw_time != "" and str(raw_time).strip() != "-":
+                        try:
+                            # 透過 pandas 轉換時間並強制格式化為「年/月/日 時:分:秒」（切除微秒）
+                            pass_time = pd.to_datetime(raw_time).strftime("%Y/%m/%d %H:%M:%S")
+                        except:
+                            pass_time = str(raw_time).strip().replace("-", "/")
+                    else:
+                        pass_time = ""
                     
                     if "★" in pass_mode:
                         demo_score = 5
