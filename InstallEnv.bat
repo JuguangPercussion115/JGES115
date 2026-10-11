@@ -121,7 +121,7 @@ call "%activatePath%" score
 echo [資訊] 正在安裝 pandas 與 openpyxl...
 call conda install -y pandas openpyxl
 echo [資訊] 正在安裝 gitpython...
-call pip install GitPython
+call pip install GitPython gdown
 
 :: 4. 完成提示
 echo.
